@@ -14,18 +14,8 @@
         <h1>Vítejte na Grussmann.cz</h1>
         <p>Toto je placeholder stránka.</p>
         <p>Tato stránka zatím není hotová a bude v blízkém budoucnu upravována.</p>
-        <h3>Prozatím se můžete podívat na pana Grussmanna</h3><a href="https://blog.iservery.com/wp-content/uploads/2013/01/2012-10-27-202404.jpg"></a>"
-        <button onclick="downloadImage()">Stáhnout pana Grussmanna v plné kvalitě</button>
-
-        <script>
-        function downloadImage() {
-            const link = document.createElement('a');
-            link.href = 'https://blog.iservery.com/wp-content/uploads/2013/01/2012-10-27-202404.jpg';
-            link.download = 'Grussmann.jpg';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
+        <h3>Prozatím se můžete podívat na pana Grussmanna</h3>
+        <a href="https://blog.iservery.com/wp-content/uploads/2013/01/2012-10-27-202404.jpg" download="Grussmann.jpg" class="download-button">Stáhnout pana Grussmana v plné kvalitě</a>
         </script>
     </div>
     <div class="footer">
