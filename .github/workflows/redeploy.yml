@@ -1,0 +1,21 @@
+name: Auto Redeploy on Docker Image Update
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Optional: Manual trigger for redeployment
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate with Kubernetes
+        uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBECONFIG }}
+
+      - name: Restart Deployment in Kubernetes
+        run: |
+          kubectl rollout restart deployment/testik -n testikfrantanamespace
